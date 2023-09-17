@@ -1,0 +1,83 @@
+/* styles.css */
+.search1{
+  margin-left: 700px;
+}
+.dform{
+  margin-left: 400px;
+  border: 2px solid gray;
+  border-radius:10px;
+  padding: 20px;
+}
+.success-message {
+  color: green;
+  margin-top: 10px;
+  text-align: center;
+  position: absolute;
+  top: 300px;
+  right: 500px;
+  font-size: 50px;
+  box-sizing: border-box;
+  border:2px solid red;
+  border-radius: 10px;
+}
+
+.student-card {
+  display: flex;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.student-picture {
+  flex: 1;
+  max-width: 100px;
+}
+
+.student-picture img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10%;
+}
+
+.student-info {
+  flex: 2;
+  padding-left: 10px;
+}
+.table-responsive{
+  text-align: center;
+  align-items: center;
+   
+}
+table {
+  border-collapse: collapse;
+  
+}
+table td{
+  width: 33%;
+}
+.tableImg{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.cellWidth{
+  width: 100px;
+}
+
+
+
+/* table{
+  width: 100%;
+  border: 2px solid rgb(216, 215, 215);
+
+  justify-content: center;
+}
+table tr td img {
+  max-width: 10%;
+  height: 10%;
+  border-radius: 10%;
+  justify-content: left;
+}
+td{
+  border: 1px solid black
+} */
