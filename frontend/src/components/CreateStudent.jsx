@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import axios from "axios";
 
 function CreateStudent() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    age: '',
+    firstName: "",
+    lastName: "",
+    age: "",
     picture: null,
   });
 
@@ -31,20 +31,29 @@ function CreateStudent() {
 
     try {
       const formData = new FormData();
-      formData.append('firstName', firstName);
-      formData.append('lastName', lastName);
-      formData.append('age', age);
-      formData.append('picture', picture);
+      formData.append("firstName", firstName);
+      formData.append("lastName", lastName);
+      formData.append("age", age);
+      formData.append("picture", picture);
 
-      await axios.post('http://localhost:3000/api/students/create', formData, {
+      await axios.post("http://localhost:3000/api/students/create", formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
       });
-      
+
       // Handle success, e.g., redirect to student list page or show a success message.
+      alert("Student Created successfully");
+      
+
+      setTimeout(() => {
+        // Redirect to the student list page after 3 seconds
+        // Replace '/student-list' with the actual URL of the student list page
+        window.location.href = "/";
+      }, 1000);
     } catch (error) {
-      console.error('Error creating student:', error);
+      // console.error("Error creating student:", error);
+      alert("Error creating student: ")
       // Handle error, e.g., show an error message.
     }
   };
@@ -54,7 +63,9 @@ function CreateStudent() {
       <h2>Create Student</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="firstName" className="form-label">First Name</label>
+          <label htmlFor="firstName" className="form-label">
+            First Name
+          </label>
           <input
             type="text"
             className="form-control"
@@ -66,7 +77,9 @@ function CreateStudent() {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="lastName" className="form-label">Last Name</label>
+          <label htmlFor="lastName" className="form-label">
+            Last Name
+          </label>
           <input
             type="text"
             className="form-control"
@@ -78,7 +91,9 @@ function CreateStudent() {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="age" className="form-label">Age</label>
+          <label htmlFor="age" className="form-label">
+            Age
+          </label>
           <input
             type="number"
             className="form-control"
@@ -90,7 +105,9 @@ function CreateStudent() {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="picture" className="form-label">Picture</label>
+          <label htmlFor="picture" className="form-label">
+            Picture
+          </label>
           <input
             type="file"
             className="form-control"
@@ -110,7 +127,11 @@ function CreateStudent() {
             />
           )}
         </div>
-        <button type="submit" className="btn btn-primary">Create</button>
+
+        
+        <button type="submit" className="btn btn-primary">
+          Create
+        </button>
       </form>
     </div>
   );

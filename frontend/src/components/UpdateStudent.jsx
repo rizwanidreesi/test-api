@@ -74,6 +74,13 @@ function UpdateStudent() {
       );
 
       // Handle success, e.g., redirect to the student list page or show a success message.
+        alert("Student updated successfully");
+      
+      setTimeout(() => {
+        // Redirect to the student list page after 3 seconds
+        // Replace '/student-list' with the actual URL of the student list page
+        window.location.href = "/";
+      }, 1000);
     } catch (error) {
       console.error("Error updating student:", error);
       // Handle error, e.g., show an error message.
@@ -148,6 +155,18 @@ function UpdateStudent() {
             />
           </div>
         )}
+
+        {/* Display existing picture */}
+        {student && student.picture && !formData.picture && (
+          <div className="mb-3">
+            <img
+              src={`http://localhost:3000/uploads/${student.picture}`}
+              alt="Existing"
+              className="img-fluid mt-2 w-25 rounded-circle border border-2 border-success"
+            />
+          </div>
+        )}
+
         <button type="submit" className="btn btn-primary">
           Update
         </button>
